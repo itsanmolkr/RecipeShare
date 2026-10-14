@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login / Register | RecipeShare</title><link rel="stylesheet" href="css/style.css"></head>
+<body data-page="login"><div id="nav"></div>
+<main class="container" id="main"><div class="panel"><div class="tabs"><button class="btn" id="tabLogin">Login</button><button class="btn alt" id="tabReg">Register</button></div>
+<p class="muted">Demo only: no password is checked or stored. Real authentication comes with the Java backend.</p>
+<form id="loginForm"><label>Email</label><input id="lEmail" type="email" required><label>Password</label><input type="password" required><br><br><button class="btn">Log in</button></form>
+<form id="regForm" hidden><label>Name</label><input id="rName" required><label>Email</label><input id="rEmail" type="email" required><label>Password</label><input id="rPass" type="password" minlength="6" required><label>Confirm password</label><input id="rPass2" type="password" required><p id="regMsg" style="color:#c0392b"></p><button class="btn">Create account</button></form></div></main>
+<div id="foot"></div><script src="js/data.js"></script><script src="js/app.js"></script></body></html>

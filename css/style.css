@@ -1,0 +1,46 @@
+/* RecipeShare styles - one shared stylesheet for all pages */
+:root{--green:#1f6f50;--green-d:#15523b;--bg:#f6f8f5;--ink:#1d2b24;--muted:#5f6f66;--line:#dbe3dd;--gold:#f0b429;--red:#c0392b}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.2;margin:0 0 .6rem}
+a{color:var(--green)}
+.container{max-width:1050px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.demo{background:var(--gold);text-align:center;font-size:.85rem;padding:.35rem}
+header.nav{background:#fff;border-bottom:1px solid var(--line)}
+.nav-in{max-width:1050px;margin:0 auto;padding:.7rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;align-items:center}
+.logo{font-family:Georgia,serif;font-size:1.4rem;font-weight:bold;text-decoration:none;margin-right:auto}
+.nav-in a.link{text-decoration:none;color:var(--ink);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav-in a.link:hover,.nav-in a.active{border-color:var(--green)}
+.btn{display:inline-block;background:var(--green);color:#fff;border:0;border-radius:6px;padding:.55rem 1.1rem;font-size:1rem;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--green-d)}
+.btn.alt{background:#fff;color:var(--green);border:1px solid var(--green)}
+.btn.danger{background:var(--red)}
+.hero{background:var(--green);color:#fff;border-radius:12px;padding:2.5rem 1.5rem;margin-bottom:2rem}
+.hero h1{font-size:2.2rem}.hero p{max-width:520px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 2rem}
+.chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:.3rem .9rem;text-decoration:none;color:var(--ink)}
+.chip:hover{border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;position:relative}
+.thumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:#e4efe8}
+.card .body{padding:.9rem}.card h3{font-size:1.1rem}
+.tag{font-size:.8rem;background:#e4efe8;color:var(--green-d);padding:.1rem .6rem;border-radius:99px}
+.meta,.muted{color:var(--muted);font-size:.9rem}
+.fav{position:absolute;top:8px;right:8px;background:#fff;border:1px solid var(--line);border-radius:50%;width:34px;height:34px;font-size:1.1rem;cursor:pointer;color:#aaa}
+.fav.on{color:var(--red)}
+.filters{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.2rem}
+input,select,textarea{font:inherit;padding:.5rem .7rem;border:1px solid var(--line);border-radius:6px;width:100%;background:#fff}
+.filters input{flex:1 1 220px;width:auto}.filters select{width:auto}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.3rem;max-width:560px}
+.panel label{display:block;margin:.8rem 0 .2rem;font-weight:600}
+.tabs{display:flex;gap:.5rem;margin-bottom:1rem}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.detail .thumb{height:220px;border-radius:10px;font-size:6rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1.5rem}
+.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem}
+.stat b{font-size:1.8rem;display:block}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{text-align:left;padding:.6rem;border-bottom:1px solid var(--line)}
+.scroll{overflow-x:auto}
+footer{text-align:center;color:var(--muted);padding:1.5rem;font-size:.9rem;border-top:1px solid var(--line)}
+@media(max-width:700px){.detail{grid-template-columns:1fr}.hero h1{font-size:1.7rem}}
