@@ -1,55 +1,132 @@
-# RecipeShare: Online Recipe Sharing Platform
+# RecipeShare — Online Recipe Sharing Platform
 
-A college project prototype (2nd-year B.Tech CSE). Users can browse, search, save and add recipes. **This version is a frontend demo only.**
+RecipeShare is a college project developed to make discovering, organising, and sharing recipes easier. The platform provides a simple interface where users can explore recipes, search by name or ingredient, browse categories, save favourites, and add their own recipes.
+
+This project is currently a **frontend prototype with a MySQL database design**. Java backend development and database connectivity are planned for a future stage.
+
+## Project Information
+
+- **Project:** RecipeShare — Online Recipe Sharing Platform
+- **Team:** Team 404
+- **Section:** 6
+- **Institution:** Galgotias University
+- **Team Members:** Anmol Kumar, Akhil Kumar, Arjun Singh, Bandana Kumari
 
 ## Features
-- Home page with categories and popular recipes
-- Browse with live search (name or ingredient) and category filter
-- Recipe details with ingredients and steps
-- Login/Register screens (demo)
-- Add Recipe form, My Recipes, Favorites (heart button)
-- User profile and a simple Admin dashboard (stats and delete)
-- Responsive layout for phone and desktop
 
-## Technology stack
-HTML5, CSS3, vanilla JavaScript. No frameworks, no build tools.
+- **Home Page:** Browse categories and discover popular recipes.
+- **Browse Recipes:** Search by recipe name or ingredient and filter by category.
+- **Recipe Details:** View recipe ingredients and preparation steps.
+- **Login and Registration:** Demonstration screens for the planned user account system.
+- **Add Recipe:** Add a recipe through the prototype interface.
+- **My Recipes:** View recipes added in the current browser.
+- **Favorites:** Save and view favourite recipes using the heart button.
+- **User Profile:** View the profile interface.
+- **Admin Dashboard:** Demonstration dashboard for recipe management.
+- **Responsive Design:** Layout adapts to desktop and mobile screens.
 
-## How to run
-1. Unzip the folder.
-2. Double-click `index.html` (any modern browser). Nothing to install.
+## Technology Stack
 
-## Project structure
+### Currently Implemented
+
+- **HTML5** — Page structure
+- **CSS3** — Styling and responsive layout
+- **JavaScript** — Page interactions and recipe rendering
+- **Browser localStorage** — Stores selected demo data locally
+
+### Planned for Future Development
+
+- Java 17
+- Jakarta Servlets and JSP
+- JDBC
+- MySQL 8.0
+- Apache Tomcat 10.1
+- Maven
+
+## Getting Started
+
+No additional software or build tools are required to run the current prototype.
+
+1. Download or clone this repository.
+2. Open the project folder.
+3. Double-click `index.html` to launch the website in a modern browser.
+4. Use the navigation menu to explore the available pages and features.
+
+Some demo features save data in the current browser. This data is not shared between users or devices.
+
+## Project Structure
+
+```text
+RecipeShare/
+├── index.html
+├── browse.html
+├── recipe.html
+├── login.html
+├── add-recipe.html
+├── my-recipes.html
+├── favorites.html
+├── profile.html
+├── admin.html
+├── css/
+│   └── style.css
+├── js/
+│   ├── data.js
+│   └── app.js
+├── docs/
+│   ├── ER-diagram-and-database-design.md
+│   └── presentation-outline.md
+└── README.md
 ```
-recipeshare/
-├── index.html, browse.html, recipe.html     pages
-├── login.html, add-recipe.html, my-recipes.html
-├── favorites.html, profile.html, admin.html
-├── css/style.css                            all styling
-├── js/data.js                               sample recipes and categories
-├── js/app.js                                navbar, cards, and page logic
-└── docs/                                    ER diagram, DB design, presentation outline
-```
 
-## How the code works (for presenting)
-- Every page has `<body data-page="...">`. `app.js` reads it and runs the matching function in the `pages` object.
-- `data.js` holds the sample recipes. `app.js` builds recipe cards from that data.
-- Favorites, the logged-in name and recipes you add are saved with `localStorage`. They stay in your browser only.
+## How It Works
 
-## Important limitations (be honest in the review)
-- **No real authentication.** Login only stores a name in the browser. Passwords are not checked or saved.
-- **No database.** Data lives in `localStorage` and resets if browser data is cleared.
-- **No server-side security.** The Admin page is open to anyone. It is a layout demo.
-- Entered text is escaped before display, but real validation must be done on the server later.
+The website uses separate HTML pages for its main sections. Shared styling is maintained in `css/style.css`, while `js/data.js` contains the sample recipe data and `js/app.js` handles page interactions and rendering.
 
-## Planned architecture (future)
-Java 17, Jakarta Servlets/JSP, JDBC, MySQL, Maven, Tomcat 10.1 (`jakarta.servlet.*` imports).
-Browser -> Servlet (controller) -> DAO (JDBC) -> MySQL, with JSPs as views. See `docs/ER-diagram-and-database-design.md`.
+The JavaScript uses each page's `data-page` attribute to determine which functionality to initialise. Browser `localStorage` is used for selected demonstration features, including favourites, the displayed user name, and recipes added through the interface.
 
-## Future development tasks
-1. Maven project with Servlets/JSP; convert each HTML page to a JSP
-2. Create the MySQL schema (docs) and DAO classes with JDBC `PreparedStatement`
-3. Registration and login with hashed passwords (e.g. BCrypt) and `HttpSession`
-4. Replace `data.js` and `localStorage` with database queries
+## Database Design
+
+The proposed MySQL database contains six tables:
+
+- `users` — User account information and roles
+- `categories` — Recipe categories
+- `recipes` — Recipe details and ownership
+- `ingredients` — Ingredients associated with recipes
+- `steps` — Recipe preparation instructions
+- `favorites` — User-to-recipe favourites
+
+The schema and ER diagram are available in [`docs/ER-diagram-and-database-design.md`](docs/ER-diagram-and-database-design.md).
+
+The database schema has been created and checked locally in MySQL Workbench. **The current website is not connected to MySQL**, and the database is not included as a live hosted service in this repository.
+
+## Current Limitations
+
+This version is intended for demonstrating the user interface and initial database planning.
+
+- Login and registration are demonstrations, not real authentication.
+- Demo favourites and added recipes are stored in the browser, not in MySQL.
+- The Admin Dashboard is a demonstration interface and does not enforce server-side permissions.
+- Database connectivity through JDBC has not yet been implemented.
+- The prototype has not been deployed as a live, full-stack web application.
+
+## Future Development
+
+The planned next steps are:
+
+1. Set up a Maven-based Java web application using Servlets and JSP.
+2. Connect the application to MySQL using JDBC and DAO classes.
+3. Implement registration, login, password hashing, and session management.
+4. Replace browser-only storage with database-backed operations.
+5. Enforce user roles and recipe ownership on the server.
+6. Add server-side validation, testing, and deployment documentation.
+
+## Repository
+
+GitHub: https://github.com/itsanmolkr/RecipeShare
+
+---
+
+**RecipeShare — A student project focused on recipe discovery, sharing, and database-backed web application design.**
 5. Role-based admin access with server-side checks, and recipe approval
 6. Server-side validation, image upload, ratings/comments
 7. Deployment on Tomcat 10.1
